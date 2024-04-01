@@ -1,24 +1,19 @@
-class Solution:
+class Solution(object):
     def longestCommonPrefix(self, strs):
-
-        strs.sort(key=len)
-        temp = strs[0]
-        newTemp = ""
-
-        print(strs)
-
+        if len(strs) == 0:
+            return ""
         for i in range(1, len(strs)):
-            # print(i, len(strs))
-            for j in range(0, len(temp)):
-                if temp[j] == strs[i][j]:
-                    newTemp += temp[j]
-
             temp = ""
-            temp = newTemp
-            newTemp = ""
-
-        return temp
+            if len(strs[0]) == 0:
+                break
+            for j in range(len(strs[i])):
+                if j < len(strs[0]) and strs[0][j] == strs[i][j]:
+                    temp += strs[0][j]
+                else:
+                    break
+            strs[0] = temp
+        return strs[0]
 
 
 newLongestCommon = Solution()
-print(newLongestCommon.longestCommonPrefix(["cir", "car"]))
+print(newLongestCommon.longestCommonPrefix(["school", "schedule", "scotland"]))

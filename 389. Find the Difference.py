@@ -1,12 +1,14 @@
-# class Solution:
-#     def findTheDifference(self, s, t):
-#         temp = ""
-#         if len(s) < len(t):
-#             for i in range(0, len(t)):
-#                 if t[i] in s:
-#                     t.replace(t[i], "")
-#         # return temp
+class Solution:
+    def findTheDifference(self, s, t):
+        temp = ""
+        s = "".join(sorted(s))
+        t = "".join(sorted(t))
+        for i in range(0, len(s)):
+            if t[i] == s[i]:
+                t.replace(t[i], "")
+        print(t)
+        # return temp
 
 
-# newFindDifference = Solution()
-# print(newFindDifference.findTheDifference("a", "aa"))
+newFindDifference = Solution()
+print(newFindDifference.findTheDifference("a", "aa"))
