@@ -3,9 +3,13 @@ import math
 
 class Solution:
     def divide(self, dividend, divisor):
-        if divisor >= 2147483648:
+        if dividend >= 2147483648:
+            if divisor < 0:
+                return -2147483647
             return 2147483647
-        elif divisor <= -2147483647:
+        elif dividend <= -2147483647:
+            if divisor < 0:
+                return 2147483647
             return -2147483647
         elif divisor < 0:
             divisor = math.pow(divisor, 2)
