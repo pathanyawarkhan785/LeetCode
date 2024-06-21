@@ -12,6 +12,3 @@ class Solution:
 checkPalindrome = Solution()
 
 print(checkPalindrome.isPalindrome(-121))
-
-
-# string split , string reverse , string join

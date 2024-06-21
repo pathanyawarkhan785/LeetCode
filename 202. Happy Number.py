@@ -4,17 +4,16 @@ import math
 class Solution:
     def isHappy(self, n):
         n = str(n)
-        for i in range(0, len(n)):
-            while i < len(n) - 1:
-                temp = int(n[i]) * int(n[i]) + int(n[i + 1]) * int(n[i + 1])
-                print(temp)
-                if temp != 1:
-                    print("inside if")
-                    n = int(n[i]) * int(n[i]) + int(n[i + 1]) * int(n[i + 1])
-                    print(temp, "new temp")
-                else:
-                    return
+        n = list(n)
+        temp = 0
+
+        for i in range(len(n)):
+            temp += int(n[i]) * int(n[i])
+            if len(str(temp)) > 1:
+                temp += int(n[i]) * int(n[i])
+        print(temp)
+        print(len(str(temp)))
 
 
 newIsHappy = Solution()
-newIsHappy.isHappy(19)
+newIsHappy.isHappy(124)
