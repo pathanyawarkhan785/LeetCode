@@ -1,13 +1,11 @@
 class Solution:
-    def findTheDifference(self, s, t):
-        temp = ""
-        s = "".join(sorted(s))
-        t = "".join(sorted(t))
-        for i in range(0, len(s)):
-            if t[i] == s[i]:
-                t.replace(t[i], "")
-        print(t)
-        # return temp
+    def findTheDifference(self, s: str, t: str) -> str:
+
+        result = 0
+        for char in s + t:
+            result ^= ord(char)
+            print(result)
+        return chr(result)
 
 
 newFindDifference = Solution()

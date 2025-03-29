@@ -1,11 +1,13 @@
 class Solution:
     def repeatedCharacter(self, s):
-        uniqChar = []
+
+        seen = set()
+
         for val in s:
-            if val in uniqChar:
+            if val in seen:
                 return val
             else:
-                uniqChar.append(val)
+                seen.add(val)
 
 
 newRepeated = Solution()

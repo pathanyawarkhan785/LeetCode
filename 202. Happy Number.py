@@ -1,19 +1,14 @@
-import math
-
-
 class Solution:
-    def isHappy(self, n):
-        n = str(n)
-        n = list(n)
-        temp = 0
+    def isHappy(self, n: int) -> bool:
 
-        for i in range(len(n)):
-            temp += int(n[i]) * int(n[i])
-            if len(str(temp)) > 1:
-                temp += int(n[i]) * int(n[i])
-        print(temp)
-        print(len(str(temp)))
+        seen = set()
+
+        while n != 1 and n not in seen:
+            seen.add(n)
+            n = sum(int(i) ** 2 for i in str(n))
+
+        return n == 1
 
 
 newIsHappy = Solution()
-newIsHappy.isHappy(124)
+print(newIsHappy.isHappy(19))

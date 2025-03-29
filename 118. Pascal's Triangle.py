@@ -1,17 +1,14 @@
 class Solution:
     def generate(self, numRows):
-        temp = []
+        triangle = []
 
-        for i in range(1, numRows + 1):
-            if i > 2:
-                for j in range(0, len(temp)):
-                    # center = int(len(temp) / 2)
-                    # temp.insert(center, temp[j] + temp[j + 1])
-                    # return temp
-                    
+        for i in range(numRows):
+            row = [1] * (i + 1)
+            for j in range(1, i):
+                row[j] = triangle[i - 1][j - 1] + triangle[i - 1][j]
+            triangle.append(row)
 
-            temp.append(1)
-            print(temp)
+        return triangle
 
 
 newGenerate = Solution()

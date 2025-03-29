@@ -1,19 +1,16 @@
 class Solution:
     def integerReplacement(self, n: int) -> int:
         count = 0
-        while 1:
-            if n == 1:
-                return count
+        while n != 1:
             if n % 2 == 0:
-                n = n // 2
-                count = count + 1
-                print(f"{n} -> {count}")
+                n //= 2
             else:
-                n = n - 1
-                count = count + 1
-                print(f"{n} -> {count}")
-
-        # print(count)
+                if n == 3 or n % 4 == 1:
+                    n -= 1
+                else:
+                    n += 1
+            count += 1
+        return count
 
 
 newIntegerReplacement = Solution()

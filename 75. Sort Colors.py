@@ -1,8 +1,18 @@
 class Solution:
     def sortColors(self, nums):
-        nums.sort()
-        print(nums)
+        count = [0, 0, 0]
+
+        for colour in nums:
+            count[colour] += 1
+
+        r, w, b = count
+
+        nums[:r] = [0] * r
+        nums[r : r + w] = [1] * w
+        nums[r + w :] = [2] * b
+
+        return nums
 
 
 newSortColors = Solution()
-newSortColors.sortColors([2, 0, 2, 1, 1, 0])
+print(newSortColors.sortColors([2, 0, 2, 1, 1, 0]))

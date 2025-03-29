@@ -1,14 +1,21 @@
-class Solution:
+class Solution(object):
     def gcdOfStrings(self, str1, str2):
-        for i in range(len(str2)):
-            if str1[i] == str2[i]:
-                str1 = str1.replace(str1[i], " ", 1)
-            else:
-                return ""
-        str1.replace(" ", "")
-        print(str1, str2)
-        return str1.replace(" ", "")
+        # print(len(str1))
+        # print(len(str2))
+
+        if str1 + str2 != str2 + str1:
+            return ""
+
+        if len(str1) == len(str2):
+            return str1
+
+        # print((str1, str2[len(str1) :]))
+        # print(len(str1), len(str2[len(str1) :]))
+
+        if len(str1) > len(str2):
+            return self.gcdOfStrings(str1[len(str2) :], str2)
+        return self.gcdOfStrings(str1, str2[len(str1) :])
 
 
 newGcdOfStrings = Solution()
-print(newGcdOfStrings.gcdOfStrings("ABABAB", "ABAB"))
+print(newGcdOfStrings.gcdOfStrings("ABCABC", "ABC"))

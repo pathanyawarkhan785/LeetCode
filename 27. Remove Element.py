@@ -1,13 +1,13 @@
 class Solution:
-    def removeElement(self, nums, val):
-        temp = []
-        for i in range(0, len(nums)):
-            # print(nums[i])
-            if nums[i] == val:
-                nums[i] = nums[i + 1]
-                nums.pop(i + 1)
-        print(nums)
+    def removeElement(self, nums: list[int], val: int) -> int:
+        k = 0
+        for i in range(len(nums)):
+            if nums[i] != val:
+                nums[k] = nums[i]
+                k += 1
+
+        return k
 
 
 newRemoveElem = Solution()
-print(newRemoveElem.removeElement([0, 1, 2, 3, 0, 4, 2], 2))
+print(newRemoveElem.removeElement([3, 2, 2, 3], 3))

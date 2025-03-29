@@ -1,28 +1,11 @@
 class Solution:
-    def largestOddNumber(self, num):
+    def largestOddNumber(self, num: str) -> str:
 
-        if int(num) % 2:
-            return num
-
-        numLen = len(num) - 1
-        print(numLen, num[numLen])
-
-        while 1:
-            if int(num[numLen]) % 2 == 0:
-                num = num.replace(num[numLen], " ")
-                numLen = numLen - 1
-
-        print(num)
-
-        # for val in reversed(num):
-        #     if int(val) % 2 == 0:
-        #         num = num.replace(val, " ")
-
-        if len(num) <= 0:
-            return ""
-
-        return num
+        for i in range(len(num) - 1, -1, -1):
+            if int(num[i]) % 2 != 0:
+                return num[: i + 1]
+        return ""
 
 
 newLargest = Solution()
-print(newLargest.largestOddNumber("4206"))
+print(newLargest.largestOddNumber("35427"))

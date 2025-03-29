@@ -19,5 +19,5 @@ class Solution:
         print(len(s[-1]))
 
 
-# newLen = Solution()
-# print(newLen.lengthOfLastWord(s))
+newLen = Solution()
+print(newLen.lengthOfLastWord(s))

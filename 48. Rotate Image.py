@@ -1,19 +1,21 @@
 class Solution:
-    def rotate(self, matrix):
+    def rotate(self, matrix: list[list[int]]) -> None:
         """
         Do not return anything, modify matrix in-place instead.
         """
-        for i in range(0, len(matrix)):
-            for j in range(0, len(matrix[i])):
-                # matrix[0].replace()
-                # print(i, matrix[i])
-                # print(i, j)
-                print(matrix[i][j], matrix[i + 2][j])
+        n = len(matrix)
 
-        # print(matrix)
+        for i in range(n):
+            for j in range(i, n):
+                matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+
+        for i in range(n):
+            matrix[i].reverse()
+
+        return matrix
 
 
 newRotate = Solution()
-newRotate.rotate([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+print(newRotate.rotate([[1, 2, 3], [4, 5, 6], [7, 8, 9]]))
 
 # [[7,4,1],[8,5,2],[9,6,3]]

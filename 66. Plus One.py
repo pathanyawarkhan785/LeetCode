@@ -3,21 +3,8 @@ lst = [1, 2, 3]
 
 class Solution:
     def plusOne(self, lst):
-        temp = ""
-
-        for val in lst:
-            temp += str(val)
-
-        temp = int(temp)
-        temp = temp + 1
-        temp = str(temp)
-
-        lst = []
-
-        for val in temp:
-            lst.append(int(val))
-
-        return lst
+        num = int("".join(map(str, lst))) + 1
+        return [int(digit) for digit in str(num)]
 
 
 newPlusOne = Solution()

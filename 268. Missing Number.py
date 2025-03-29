@@ -1,11 +1,6 @@
 class Solution:
-    def missingNumber(self, nums):
-        nums.sort()
-        for num in range(0, len(nums) + 1):
-            if num not in nums:
-                temp = num
-
-        return temp
+    def missingNumber(self, nums: list[int]) -> int:
+        return int((len(nums) + 1) * len(nums) / 2 - sum(nums))
 
 
 newMissingNumber = Solution()

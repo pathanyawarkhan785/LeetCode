@@ -1,13 +1,12 @@
+from collections import Counter
+
+
 class Solution:
-    def topKFrequent(self, nums, k):
-        temp = []
-        i = 0
-        while nums[i]:
-            temp.append(max(nums, key=nums.count))
-            nums.pop(nums[i])
-            i += 1
-            # nums.pop()
+    def topKFrequent(self, nums: list[int], k: int) -> list[int]:
+
+        count = Counter(nums)
+        return [item for item, _ in count.most_common(k)]
 
 
 newTopK = Solution()
-print(newTopK.topKFrequent([1, 2], 2))
+print(newTopK.topKFrequent([1, 1, 1, 2, 2, 3], 2))

@@ -2,21 +2,28 @@ import math
 
 
 class Solution:
-    def divide(self, dividend, divisor):
-        if dividend >= 2147483648:
-            if divisor < 0:
-                return -2147483647
-            return 2147483647
-        elif dividend <= -2147483647:
-            if divisor < 0:
-                return 2147483647
-            return -2147483647
-        elif divisor < 0:
-            divisor = math.pow(divisor, 2)
-            divisor = math.sqrt(divisor)
-            divisor = math.floor(dividend / divisor)
-            return -divisor
-        return math.floor(dividend / divisor)
+    def divide(self, dividend: int, divisor: int) -> int:
+
+        MAX_INT = 2147483647
+        MIN_INT = -2147483648
+
+        if dividend == MIN_INT and divisor == -1:
+            return MAX_INT
+
+        negative = (dividend < 0) != (divisor < 0)
+
+        dividend, divisor = abs(dividend), abs(divisor)
+
+        quotient = 0
+        while dividend >= divisor:
+            temp, multiple = divisor, 1
+            while dividend >= (temp << 1):
+                temp <<= 1
+                multiple <<= 1
+            dividend -= temp
+            quotient += multiple
+
+        return -quotient if negative else quotient
 
 
 newDivide = Solution()

@@ -1,0 +1,7 @@
+{
+    "python.REPL.enableREPLSmartSend": false,
+    "files.associations": {
+        "*.js": "javascript",
+        "stdio.h": "c"
+    }
+}
