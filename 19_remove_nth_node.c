@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
 
 struct ListNode
 {
@@ -45,8 +44,6 @@ struct ListNode *printList(struct ListNode *head)
     }
 };
 
-#include <stdio.h>
-
 int main()
 {
     struct ListNode *head = (struct ListNode *)malloc(sizeof(struct ListNode));
@@ -59,17 +56,17 @@ int main()
     head->next = second;
 
     second->val = 10;
-    // second->next = third;
-    second->next = NULL;
+    second->next = third;
+    // second->next = NULL;
 
-    // third->val = 15;
-    // third->next = fourth;
+    third->val = 15;
+    third->next = fourth;
 
-    // fourth->val = 20;
-    // fourth->next = fifth;
+    fourth->val = 20;
+    fourth->next = fifth;
 
-    // fifth->val = 25;
-    // fifth->next = NULL;
+    fifth->val = 25;
+    fifth->next = NULL;
 
     removeNthFromEnd(head, 2);
     printList(head);
