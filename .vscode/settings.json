@@ -2,6 +2,7 @@
     "python.REPL.enableREPLSmartSend": false,
     "files.associations": {
         "*.js": "javascript",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "stdlib.h": "c"
     }
 }
