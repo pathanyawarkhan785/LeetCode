@@ -1,10 +1,11 @@
 class Solution:
     def largestAltitude(self, gain):
 
-        gain = [0] + gain
-
         for i in range(1, len(gain)):
             gain[i] += gain[i - 1]
+
+        if max(gain) < 1:
+            return 0
 
         return max(gain)
 
