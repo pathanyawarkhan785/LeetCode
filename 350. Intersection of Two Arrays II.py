@@ -1,7 +1,9 @@
 class Solution:
     def intersect(self, nums1: list[int], nums2: list[int]) -> list[int]:
-        print(nums1)
-        print(nums2)
+
+        nums1 = set(nums1)
+        newNums = nums1.intersection(nums2)
+        print(newNums)
 
 
 newIntersect = Solution()
