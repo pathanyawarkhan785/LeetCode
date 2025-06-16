@@ -3,6 +3,9 @@
     "files.associations": {
         "*.js": "javascript",
         "stdio.h": "c",
-        "stdlib.h": "c"
+        "stdlib.h": "c",
+        "initializer_list": "cpp",
+        "limits": "cpp",
+        "ostream": "cpp"
     }
 }
